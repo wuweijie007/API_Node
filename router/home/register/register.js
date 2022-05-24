@@ -8,7 +8,8 @@ let { resultData, } = require('../../../tool/resultData')
 let tableName = 'user_info'
 
 module.exports = async (req, res, next) => {
-    console.log('register中间件'+req.body);
+    console.log('register中间件');
+    console.log(req.body);
     let { username, password } = req.body
     console.log(typeof username, typeof password);
     try {
