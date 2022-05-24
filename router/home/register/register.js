@@ -8,9 +8,9 @@ let { resultData, } = require('../../../tool/resultData')
 let tableName = 'user_info'
 
 module.exports = async (req, res, next) => {
-    console.log('register中间件');
+    console.log('register中间件'+req.body);
     let { username, password } = req.body
-    // console.log(typeof username, typeof password);
+    console.log(typeof username, typeof password);
     try {
         // 判断数据库中是否已存在该用户名
         let find_data = await sqlQuery(`select * from ${tableName} where username = '${username}'`)
