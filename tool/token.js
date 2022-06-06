@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const singnKey = 'zgs_first_token';  //签名
+let { sqlQuery } = require('../model/dataBase')
 
 //登录接口 生成token的方法
 function setToken(user_name) {
@@ -11,18 +12,19 @@ function setToken(user_name) {
     );
     return token
 }
-
 //各个接口需要验证token的方法
-function verify_Token(token) {
+function verify_Token(appid,token) {
     return new Promise((resolve, reject) => {
-        jwt.verify(token, singnKey, (err, decode) => {
-            if (err) {
-                return reject(err)
-            } else {
-                return resolve(decode)
+        sqlQuery(`select appsecret from user_token where appkey = '${appid}'`) 
+        .then(data =>{
+            if(data.length != 0 && data[0]['appsecret'] == token){
+                resolve(data)
+            }else{
+               reject(err)
             }
-        })
-    });
+            }
+        )
+    })
 }
 
 module.exports = {

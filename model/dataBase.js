@@ -28,6 +28,7 @@ db.on('error', err => {
 
 // 基于Promise封装SQL语句查询
 function sqlQuery(sql) {
+    console.log(sql);
     return new Promise((resolve, reject) => {
         db.query(sql, (err, res) => {
             if (err) {

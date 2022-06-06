@@ -3,7 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 
 // 引入二级路由
-const { admin } = require('./router/admin/admin')
+const { apiV1 } = require('./router/admin/admin')
 const home = require('./router/home/home')
 
 const app = epxress()
@@ -20,7 +20,7 @@ app.use(bodyParser.json())  // request payload
 app.use(require('./middleware/token'));
 
 // 配置二级路由
-app.use('/admin', admin)
+app.use('/admin', apiV1)
 app.use('/home', home)
 
 
