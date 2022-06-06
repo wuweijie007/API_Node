@@ -3,7 +3,8 @@ let { resultData } = require('../../../tool/resultData')
 
 module.exports = (req, res, next) => {
     console.log('in findHotArticle');
-    sqlQuery(`select art.sn,art.account,art.title,art.url, art.content_html from wechat_article art join wechat_article_list list on art.sn = list.sn order by list.id desc 
+    sqlQuery(`select account.account,list.title,list.url, list.publish_time from  wechat_article_list list join wechat_account account on list.__biz = account.__biz
+    order by list.publish_time desc 
     limit 10`)
         .then(data => {
             res.send(resultData('查询成功', 200, data))
