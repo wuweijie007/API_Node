@@ -60,7 +60,8 @@ apiV1.post('/api/article/list_key', require('./article_list/find_by_key'))
 apiV1.post('/api/article/detail', require('./article_list/findArticleDetailBySn'))
 apiV1.post('/api/article/hot', require('./article_list/findHotArticle'))
 apiV1.post('/api/article/search', require('./article_list/searchArticle'))
-
+apiV1.post('/api/article/search', require('./article_list/searchArticle'))
+apiV1.post('/api/article/everydaysaying', require('./article_list/searchEverydaySaying'))
 
 module.exports = {
     apiV1
