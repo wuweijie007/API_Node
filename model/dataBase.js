@@ -7,6 +7,7 @@ const db = mysql.createConnection({
     user: db_config.user,
     password: db_config.password,
     database: db_config.database,
+    charset: db_config.charset
 });
 
 // 连接数据库

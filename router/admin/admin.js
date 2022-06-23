@@ -66,6 +66,7 @@ apiV1.post('/api/article/everydaysaying', require('./article_list/searchEveryday
 
 
 apiV1.post('/api/article/chain_list_key', require('./article_list/chain_find_by_key'))
+apiV1.post('/api/article/chain_detail', require('./article_list/chain_findArticleDetailBySn'))
 
 module.exports = {
     apiV1
