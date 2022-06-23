@@ -54,6 +54,7 @@ apiV1.get('/facility/info_key', require('./facility_info/find_info_by_key'))
 
 // --------------------  分类导航相关接口 -----------------------------
 apiV1.post('/api/navi/typeinfo', require('./navigitor_info/find_type_info'))
+apiV1.post('/api/navi/chaintypeinfo', require('./navigitor_info/chainfind_type_info'))
 
 // --------------------  分类导航相关接口 -----------------------------
 apiV1.post('/api/article/list_key', require('./article_list/find_by_key'))
@@ -62,6 +63,9 @@ apiV1.post('/api/article/hot', require('./article_list/findHotArticle'))
 apiV1.post('/api/article/search', require('./article_list/searchArticle'))
 apiV1.post('/api/article/search', require('./article_list/searchArticle'))
 apiV1.post('/api/article/everydaysaying', require('./article_list/searchEverydaySaying'))
+
+
+apiV1.post('/api/article/chain_list_key', require('./article_list/chain_find_by_key'))
 
 module.exports = {
     apiV1

@@ -4,7 +4,7 @@ let { resultData } = require('../../../tool/resultData')
 
 module.exports = (req, res, next) => {
     console.log('来到了"/navitigor"中间件');
-    sqlQuery('select type_code,type_name from chain_msg_type')
+    sqlQuery('select type_code,type_name from chain_msg_type order by order_index')
         .then(data => res.send(resultData('查询成功', 200, data)))
         .catch(err => {
             console.log(err);
