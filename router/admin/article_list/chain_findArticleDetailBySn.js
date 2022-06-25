@@ -3,6 +3,7 @@ let { resultData } = require('../../../tool/resultData')
 
 module.exports = (req, res, next) => {
     console.log('in findArticleDetailBySn');
+    console.log(req.headers)
     let sn = req.headers['sn']
     sqlQuery(`select list.id,list.title,list.publish_time,list.url from  chain_msg_list list 
     where list.id= "${sn}"`)
