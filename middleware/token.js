@@ -4,6 +4,7 @@ const { resultData } = require('../tool/resultData')
 
 module.exports = (req, res, next) => {
     console.log('来到了全局中间件');
+    console.log(req.connection.remoteAddress)
     const token = req.headers['authorization']
     const appkey = req.headers['appkey']
     let path = req.originalUrl
