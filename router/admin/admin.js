@@ -61,12 +61,13 @@ apiV1.post('/api/article/list_key', require('./article_list/find_by_key'))
 apiV1.post('/api/article/detail', require('./article_list/findArticleDetailBySn'))
 apiV1.post('/api/article/hot', require('./article_list/findHotArticle'))
 apiV1.post('/api/article/search', require('./article_list/searchArticle'))
-apiV1.post('/api/article/search', require('./article_list/searchArticle'))
 apiV1.post('/api/article/everydaysaying', require('./article_list/searchEverydaySaying'))
 
 
 apiV1.post('/api/article/chain_list_key', require('./article_list/chain_find_by_key'))
 apiV1.post('/api/article/chain_detail', require('./article_list/chain_findArticleDetailBySn'))
+apiV1.post('/api/article/chain_hot', require('./article_list/chain_findHotArticle'))
+apiV1.post('/api/article/chain_search', require('./article_list/chain_searchArticle'))
 
 module.exports = {
     apiV1
